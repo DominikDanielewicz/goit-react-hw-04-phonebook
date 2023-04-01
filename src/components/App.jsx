@@ -23,8 +23,10 @@ const App = () => {
   };
 
   const deleteContact = id => {
-    const index = contacts.findIndex(person => person.id === id);
-    setContacts(contacts.splice(index, 1));
+    const allContacts = [...contacts];
+    const index = allContacts.findIndex(person => person.id === id);
+    allContacts.splice(index, 1);
+    setContacts(allContacts);
   };
 
   const handleFilter = e => {
