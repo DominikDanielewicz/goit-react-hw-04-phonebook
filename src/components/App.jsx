@@ -40,24 +40,9 @@ const App = () => {
     }
   }, []);
 
-  // const componentDidMount() {
-  //   const storageContacts = JSON.parse(localStorage.getItem('contacts'));
-  //   if (storageContacts) {
-  //     this.setState({
-  //       contacts: storageContacts,
-  //     });
-  //   }
-  // }
-
   useEffect(() => {
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
-
-  // const componentDidUpdate(prevState) {
-  //   if (this.state.contacts !== prevState.contacts) {
-  //     localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
-  //   }
-  // }
 
   const list = contacts.filter(
     contact =>
